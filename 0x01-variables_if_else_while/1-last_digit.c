@@ -21,10 +21,10 @@ int main(void)
 		{
 			if (l == 0)
 			{
-				printf("The last digit of %d is %d and is 0\n", n, l);
+				printf("Last digit of %d is %d and is 0\n", n, l);
 			}
 		else
-			printf("The last digit of %d and %d is less than 6 and not 0\n", n, l);
+			printf("Last digit of %d and %d is less than 6 and not 0\n", n, l);
 	}
 	return (0);
 }
