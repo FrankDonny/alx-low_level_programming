@@ -7,18 +7,11 @@
  */
 int main(void)
 {
-	char i;
-	char c;
+	char a[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int i;
 
-	i = 65;
-	c = 97;
-	if (i < 91)
-	{
-		putchar(i);
-	} else
-		if (c < 123)
-		{
-			putchar(c);
-		}
+	for (i = 0; i <= 52; i++)
+		putchar(a[i]);
+	putchar('\n');
 	return (0);
 }
