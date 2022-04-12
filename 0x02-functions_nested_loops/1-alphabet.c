@@ -1,14 +1,15 @@
 #include "main.h"
+
 /**
- * main - entry point
+ * print_alphabet - print alphabet lowercase
  * Return: 0 always
  */
-int main(void)
+void print_alphabet(void)
 {
 	char a;
 
 	for (a = 97; a < 123; a++)
-		alpha(a);
-	alpha('\n');
+		print_alphabet(a);
+	print_alphabet('\n');
 	return (0);
 }
