@@ -3,11 +3,22 @@
 
 /**
  * _abs - computes the absolute value
- * int: the number to compute
+ * @i - the number to compute
  * Return: absolute value
  */
 
-int _abs(int)
+int _abs(int i)
 {
-	return (abs(int));
+	if (i < 0)
+	{
+		(i * (-1));
+	}
+	else if (i == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (n);
+	}
 }
