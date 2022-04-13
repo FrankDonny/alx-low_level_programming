@@ -13,12 +13,14 @@ void jack_bauer(void)
 {
 	int a, b, c, d;
 
-	while (d <= '9)
+	while (d <= 9)
 	{
 		c = 0;
 		while (c < 6)
+		{
 			b = 0;
 			while (b < 5)
+			{
 				a = 0
 				while (a < 3)
 				{
@@ -31,4 +33,5 @@ void jack_bauer(void)
 				}b++
 			}c++
 		}d++
+	}
 }
