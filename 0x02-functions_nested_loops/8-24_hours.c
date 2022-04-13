@@ -21,7 +21,7 @@ void jack_bauer(void)
 			b = 0;
 			while (b < 5)
 			{
-				a = 0
+				a = 0;
 				while (a < 3)
 				{
 					_putchar('a');
@@ -30,8 +30,8 @@ void jack_bauer(void)
 					_putchar('c');
 					_putchar('d');
 					a++;
-				}b++
-			}c++
-		}d++
+				}b++;
+			}c++;
+		}d++;
 	}
 }
