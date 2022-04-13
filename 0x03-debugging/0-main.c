@@ -9,17 +9,6 @@ int main(void)
 
 	n = 0;
 
-	if (n > 0)
-	{
-		positive_or_negative(n);
-	} else
-		if (n == 0)
-		{
-			positive_or_negative(n);
-		}
-		else
-		{
-			positive_or_negative(n);
-		}
+	positive_or_negative(n);
 	return (0);
 }
