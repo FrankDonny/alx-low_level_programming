@@ -9,17 +9,17 @@
 
 void puts_half(char *str)
 {
-	int count, len = 0;
+int count, len = 0;
 
-	while (*(str + len))
-		len++;
-		count = len / 2;
-		if (len % 2)
-		count += 1;
-			while (count < len)
-			{
-				_putchar(*(str + count));
-				count++;
-			}
-	_putchar('\n');
+while (*(str + len))
+len++;
+count = len / 2;
+if (len % 2)
+count += 1;
+while (count < len)
+{
+_putchar(*(str + count));
+count++;
+}
+_putchar('\n');
 }
