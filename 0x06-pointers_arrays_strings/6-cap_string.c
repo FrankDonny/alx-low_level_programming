@@ -9,7 +9,7 @@ char *cap_string(char *ch)
 {
 	int i, j;
 
-	char sep[] = " \t\n,;.!?\"(){}";
+	char sep[] = ",;.!?\"(){}";
 
 	if (ch[0] == 'a' && ch[0] == 'z')
 		ch[0] = 'A' + (ch[0] - 'a');
