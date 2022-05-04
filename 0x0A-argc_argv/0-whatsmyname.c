@@ -1,7 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char * argv[])
+/**
+ * main - the function
+ * @argc: argument to main
+ * @argv: argument to main
+ * Return: 0 for success
+ */
+
+int main(int argc, char *argv[])
 {
 	int i;
 
