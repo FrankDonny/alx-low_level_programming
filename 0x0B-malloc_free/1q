@@ -12,16 +12,16 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *newAlloc;
+	char *newAlloc, *curCat;
 	unsigned int n, m;
-	n = m = 0;
-	n = strlen(s1);
-	m = strlen(s2) + 1;
+	n = strlen(s1 + 1);
+	m = strlen(s2 + 1);
 
 	newAlloc = malloc(sizeof(char) * (n + m));
 
-	strcpy (newAlloc, (strcat(s1, s2)));
-	/*strcat(newAlloc, curCat);*/
+	*(strcat(s1, s2));
+	curCat = s1;
+	strcat(newAlloc, curCat);
 	return (newAlloc);
 
 	if (newAlloc == NULL)
