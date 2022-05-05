@@ -10,13 +10,32 @@
  * Return: NULL if error, newAlloc if success
  */
 
+/**
+* _strlen - returns the length of a string
+* @s: string
+* Return: String length
+*/
+
+int _strlen(char *s)
+{
+	int count = 0;
+
+	while (*s == '\0')
+	{
+		s++;
+		count++;
+		break;
+	}
+	return (count);
+}
+
 char *str_concat(char *s1, char *s2)
 {
 	char *newAlloc;
 	unsigned int n, m;
 	n = m = 0;
-	n = strlen(s1);
-	m = strlen(s2) + 1;
+	n = _strlen(s1);
+	m = _strlen(s2);
 
 	newAlloc = malloc(sizeof(char) * (n + m));
 
