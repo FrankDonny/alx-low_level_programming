@@ -2,7 +2,11 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-
+/**
+ * malloc_checked - allocate memory
+ * @b: parameter to malloc_checked
+ * Return: void pointer
+ */
 
 void *malloc_checked(unsigned int b)
 {
@@ -10,7 +14,7 @@ void *malloc_checked(unsigned int b)
 
 	ptr = malloc(b);
 
-	if (b == '\0')
+	if (ptr == NULL)
 	{
 		exit(98);
 	}
