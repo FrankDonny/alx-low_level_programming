@@ -11,8 +11,17 @@
 struct dog
 {
 	char *name;
+	/**
+	 * @name: name of struct
+	 */
 	float age;
+	/**
+	 * @age: age of struct
+	 */
 	char *owner;
+	/**
+	 * @owner: owner of struct
+	 */
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
