@@ -1,4 +1,12 @@
-#include "calc.h"
+#include "3-calc.h"
+#include <stddef.h>
+#include <string.h>
+
+/**
+ * get_op_func - selects the appropriate operator
+ * @s: operator passed as argument
+ * Return: the operator
+ */
 
 int (*get_op_func(char *s))(int, int)
 {
@@ -12,14 +20,11 @@ int (*get_op_func(char *s))(int, int)
 	};
 
 	int i = 0;
-	char *ptr = &ops;
-
-	while (i < sizeof(ops) / sizeof(ops[0]))
+	while (ops[i].op != NULL)
 	{
-		if (s == ptr)
-		{
-			return (ptr);
-		}
+		if (strcmp(s, ops[i].op) == 0)
+			break;
 		i++;
 	}
+	return (ops[i].f);
 }
