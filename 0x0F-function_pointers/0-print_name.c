@@ -3,8 +3,8 @@
 
 /**
  * print_name - function name
- * @name: parameter to function
- * @f: callback function
+ * @name: parameter to the function
+ * @f: callback to the function
  */
 
 void print_name(char *name, void (*f)(char *))
