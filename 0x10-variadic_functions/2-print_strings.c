@@ -21,14 +21,15 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		ch = va_arg(list, char*);
 
 		printf("%s", ch);
-		if (n - 1 == '\0')
-		{
-			printf("(nil)");
-		}
+
 		if (i < n - 1 && separator)
 		{
 			printf("%s", separator);
 		}
+		else if (n - 1 == '\0')
+                {
+                        printf("(nil)");
+                }
 		else if (separator == NULL)
 		{
 			;
