@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
  * list_len - produces the number of elements in list_t
@@ -8,10 +9,9 @@
 
 size_t list_len(const list_t *h)
 {
-	size_t a;
+	unsigned int a;
 
 	for (a = 0; h; a++)
-		_putchar(a);
-	h = h->next;
+		h = h->next;
 	return (a);
 }
