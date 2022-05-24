@@ -1,5 +1,12 @@
 #include "lists.h"
 
+/**
+ * add_node_end - this function appends a new node to a singly list
+ * @head: this is a double pointer that points to list_t
+ * @str: the string to be copied
+ * Return: NULL if there is no new string or tmp is NULL,
+ * return pointer head otherwise
+ */
 
 list_t *add_node_end(list_t **head, const char *str)
 {
@@ -21,10 +28,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	newnode->next = NULL;
 
 	if (tmp == NULL)
-        {
-                *head = newnode;
-        }
-	else 
+	{
+		*head = newnode;
+	}
+	else
 	{
 		while (tmp->next != 0)
 		{
