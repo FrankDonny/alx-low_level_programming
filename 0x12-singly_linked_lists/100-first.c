@@ -1,6 +1,12 @@
 #include "lists.h"
 
+/**
+ * start_before_main - is a funtion that prints a strings before main function
+ * gets executed
+ */
+
 void start_before_main(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must" 
+			"allow,\nI bore my house upon my back!\n");
 }
