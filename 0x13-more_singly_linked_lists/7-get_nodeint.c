@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - this function returns returns the nth node of 
+ * get_nodeint_at_index - this function returns returns the nth node of
  * a linked list
  * @head: pointer to the structure
  * @index: the position of the particular node
@@ -15,7 +15,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	temp = head;
 
-	if (!temp->next)
+	if (!temp)
 		return (NULL);
 
 	for (count = 0; count < index; count++)
