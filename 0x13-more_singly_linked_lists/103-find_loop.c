@@ -1,18 +1,24 @@
 #include "lists.h"
 
+/**
+ * find_listint_loop - find the loop the in an linked list
+ * @head: this point to the linked list
+ * Return: just return
+ */
+
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *two_paces, one_pace;
-	one_pace = head->next;
-	two_paces = head->next->next;
-	unsigned int i = 0;
+	listint_t *single_pace, *double_pace, *temp;
 
+	temp = head;
+	single_pace = single_pace->next;
+	double_pace = double_pace->next-next;
 
-	while (one_pace && two_pace && two_pace->next)
+	while (single_pace && double_pace && double_pace-next)
 	{
-		if (one_pace == two_pace)
-			return (&head);
-		return (NULL);
-		i++;
+		if (single_pace != double_pace)
+			return (NULL);
+		temp = temp->next;
 	}
+	return (temp->next);
 }
