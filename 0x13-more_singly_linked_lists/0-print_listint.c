@@ -3,6 +3,7 @@
 /**
  * print_listint - this function prints all elements in listint_t
  * @h: this points to the structure
+ *
  * Return: the number of elements in the structure
  */
 
