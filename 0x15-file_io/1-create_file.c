@@ -9,15 +9,10 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	char *buf_size = malloc(sizeof(text_content));
-	int fp;
-	int wr;
-	
+	int fp, wr, num;
+
 	fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fp == -1)
-		return (-1);
-
-	if (!O_WRONLY)
 		return (-1);
 
 	if (filename == NULL)
@@ -26,12 +21,14 @@ int create_file(const char *filename, char *text_content)
 	if (text_content == NULL)
 		text_content = "";
 
-	wr = write(fp, text_content, *buf_size);
+	for (num = 0; text_content[num]; num++)
+		;
+
+	wr = write(fp, text_content, num);
 	if (wr == -1)
 		return (-1);
-	
+
 	close(fp);
-	free(buf_size);
 
 	return (1);
 }
