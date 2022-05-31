@@ -10,10 +10,10 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	char *buf_size = malloc(sizeof(text_content));
 	int fp, wr, a;
 
 	fp = open(filename, O_WRONLY | O_APPEND, 0600);
+
 	if (fp == -1)
 		return (-1);
 
@@ -24,9 +24,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		for (a = 0; text_content[a]; a++)
 			;
-		wr = write(fp, text_content, *buf_size);
+		wr = write(fp, text_content, a);
 		if (wr == -1)
-		return (-1);
+			return (-1);
 	}
 	return (1);
 }
