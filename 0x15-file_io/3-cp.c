@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
 {
 	int rd, wr, file_from, file_to;
 	mode_t permissions;
-	char *buf_size;
+	/*char *buf_size;*/
+	char buf_size[1024];
 
 	if (argc != 3)
 	{
@@ -36,10 +37,10 @@ int main(int argc, char *argv[])
 	/*read first file*/
 	file_from = open(argv[1], O_RDONLY);
 
-	buf_size = malloc(sizeof(char) * 1024);
+	/*buf_size = malloc(sizeof(char) * 1024);*/
 
 	rd = read(file_from, buf_size, 1024);
-	if (!file_from || rd == -1)
+	if (rd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -51,7 +52,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, permissions);
 
 	wr = write(file_to, buf_size, rd);
-	if (file_to == -1 || wr == -1)
+	if (wr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
