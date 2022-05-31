@@ -12,22 +12,24 @@ int create_file(const char *filename, char *text_content)
 	char *buf_size = malloc(sizeof(text_content));
 	int fp;
 	int wr;
+	
+	fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (fp == -1)
+		return (-1);
+
+	if (!O_WRONLY)
+		return (-1);
+
+	if (filename == NULL)
+		return (-1);
 
 	if (text_content == NULL)
-		fp = open(filename, O_CREAT, 0600);
-	else
-	{
-		fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-		if (fp == -1)
-			return (-1);
-		if (!O_WRONLY)
-			return (-1);
-		if (filename == NULL)
-			return (-1);
-		wr = write(fp, text_content, *buf_size);
-		if (wr == -1)
-			return (-1);
-	}
+		text_content = "";
+
+	wr = write(fp, text_content, *buf_size);
+	if (wr == -1)
+		return (-1);
+	
 	close(fp);
 	free(buf_size);
 
