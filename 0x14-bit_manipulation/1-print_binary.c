@@ -2,10 +2,8 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int i;
+	int i;
 
 	for (i = n ; i; i *= 0.5)
-	{
-		(n & i) ? putchar(49) : putchar(48);
-	}
+		(n & i) ? _putchar(49) : _putchar(48);
 }
