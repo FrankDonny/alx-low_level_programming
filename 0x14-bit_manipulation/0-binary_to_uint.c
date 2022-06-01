@@ -7,8 +7,6 @@ unsigned int binary_to_uint(const char *b)
 
 	for(i = 0; i <= strlen(b); i++)
 	{
-		/*if (b* != 0 || b* != 1)
-			return (0);*/
 		if (*b != 0)
 			return (0);
 		if (*b != 1)
