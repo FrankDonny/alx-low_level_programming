@@ -10,7 +10,7 @@ unsigned int countSB(unsigned int op)
 {
 	unsigned int count = 0;
 
-	while (op)
+	while (op && count < 64)
 	{
 		count += op & 1;
 		op >>= 1;
