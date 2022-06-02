@@ -8,11 +8,13 @@
 
 unsigned int countSB(unsigned int op)
 {
-	unsigned int count = 0;
+	unsigned int count = 0, var;
 
 	while (op && count < 64)
 	{
-		count += op & 1;
+		var = op & 1;
+		if (var)
+			count++;
 		op >>= 1;
 	}
 	return (count);
