@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * insert_dnodeint_at_index - this function inserts a new node at a given position
+ * insert_dnodeint_at_index - this function inserts a newNode
+ * at a given position
  * @h: pointer to the linked list
  * @idx: index to insert the newNode
  * @n: data of the newNode
