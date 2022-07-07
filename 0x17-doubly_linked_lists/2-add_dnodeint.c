@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "lists"
 
 /**
  * add_dnodeint - inserts a new node into a linked list
@@ -21,19 +21,11 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	newNode->n = n;
 	newNode->prev = NULL;
-
-	if (temp != NULL)
-	{
-		while (temp->prev != NULL)
-		{
-			temp = temp->prev;
-		}
-	}
-	newNode->next = temp;
 	if (temp != NULL)
 	{
 		temp->prev = newNode;
 	}
+	newNode->next = temp;
 	temp = newNode;
 	return (newNode);
 }
