@@ -47,15 +47,15 @@ void shash_table_print_rev(const shash_table_t *ht)
 		return;
 	printf("{");
 	tmp = ht->stail;
-        while (tmp != NULL)
-        {
-                if (flag == 1)
-                        printf(", ");
-                printf("'%s': '%s'", tmp->key, tmp->value);
-                flag = 1;
-                tmp = tmp->sprev;
-        }
-        printf("}\n");
+	while (tmp != NULL)
+	{
+		if (flag == 1)
+			printf(", ");
+		printf("'%s': '%s'", tmp->key, tmp->value);
+		flag = 1;
+		tmp = tmp->sprev;
+	}
+	printf("}\n");
 }
 
 /**
@@ -74,7 +74,7 @@ void shash_table_print(const shash_table_t *ht)
 	printf("{");
 	tmp = ht->shead;
 	while (tmp != NULL)
-        {
+	{
 		if (flag == 1)
 			printf(", ");
 		printf("'%s': '%s'", tmp->key, tmp->value);
