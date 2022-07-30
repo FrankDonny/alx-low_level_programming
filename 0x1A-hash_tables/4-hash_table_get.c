@@ -1,28 +1,73 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_get - function to retrieve a value from the hash_table
+ * make_hash_node - creates a new hash node
+ * @key: key for the node
+ * @value: for the node
  *
- * @ht: pointer to the hash_table
- * @key: the key to retrieve its value
- * Return: the value of the key, else NULL if key can't be found
+ * Return: the new node, or NULL on failure
  */
-
-char *hash_table_get(const hash_table_t *ht, const char *key)
+hash_node_t *make_hash_node(const char *key, const char *value)
 {
-	hash_node_t *temp;
-	unsigned long int idx;
+	hash_node_t *node;
+
+	node = malloc(sizeof(hash_node_t));
+	if (node == NULL)
+		return (NULL);
+	node->key = strdup(key);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (NULL);
+	}
+	node->next = NULL;
+	return (node);
+}
+
+
+/**
+ * hash_table_set - sets a key to a value in the hash table
+ * @ht: hash table to add elemt to
+ * @key: key for the data
+ * @value: data to store
+ *
+ * Return: 1 if successful, 0 otherwise
+ */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+	unsigned long int index;
+	hash_node_t *hash_node, *tmp;
+	char *new_value;
 
 	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
-			key == NULL || strlen(key) == 0)
-		return (NULL);
-	idx = key_index(((const unsigned char *)key), ht->size);
-	temp = ht->array[idx];
-	while (temp != NULL)
+	    key == NULL || strlen(key) == 0 || value == NULL)
+		return (0);
+	index = key_index((const unsigned char *)key, ht->size);
+	tmp = ht->array[index];
+	while (tmp != NULL)
 	{
-		if (strcmp(temp->key, key) == 0)
-			return (temp->value);
-		temp = temp->next;
+		if (strcmp(tmp->key, key) == 0)
+		{
+			new_value = strdup(value);
+			if (new_value == NULL)
+				return (0);
+			free(tmp->value);
+			tmp->value = new_value;
+			return (1);
+		}
+		tmp = tmp->next;
 	}
-	return (NULL);
+	hash_node = make_hash_node(key, value);
+	if (hash_node == NULL)
+		return (0);
+	hash_node->next = ht->array[index];
+	ht->array[index] = hash_node;
+	return (1);
 }
