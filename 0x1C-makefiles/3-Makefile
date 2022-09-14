@@ -1,20 +1,26 @@
 # -*- Makefile -*-
 
 CC = gcc
-SRC = school.c main.c
+SRC = main.c school.c
 OBJ = main.o school.o
 NAME = school
 
-all: $(NAME)
+all: fclean $(NAME)
 
-${OBJ[1]}: ${SRC[2]}
-	$(CC) -c ${SRC[2]} -o ${OBJ[1]}
-
-${OBJ[2]}: $(SRC[1])
-	$(CC) -c ${SRC[1]} -o ${OBJ[2]}
-
-$(NAME): ${OBJ[1]} ${OBJ[2]}
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
+$(OBJ[1]): $(SRC[1])
+	$(CC) -c $(SRC[1])
+
+$(OBJ[2]): $(SRC[2])
+	$(CC) -c $(SRC[2])
+
 clean:
-	rm -f *~
+	rm -f *~ school
+
+oclean:
+	rm *.o
+
+fclean:
+	rm -f *~ school *.o

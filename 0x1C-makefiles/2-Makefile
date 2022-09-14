@@ -1,7 +1,7 @@
 # -*- Makefile -*-
 
 CC = gcc
-SRC = school.c main.c
+SRC = main.c school.c
 OBJ = main.o school.o
 NAME = school
 
@@ -10,8 +10,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) -c $(SRC)
+$(OBJ[1]): $(SRC[1])
+	$(CC) -c $(SRC[1])
 
-main.o: main.c
-school.o: school.c
+$(OBJ[2]): $(SRC[2])
+	$(CC) -c $(SRC[2])
