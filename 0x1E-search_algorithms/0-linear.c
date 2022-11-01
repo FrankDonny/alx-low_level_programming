@@ -8,14 +8,14 @@
  * Return: the index of the value on success else -1
 */
 
-int linear_search(int *arr, size_t size, int value)
+int linear_search(int *array, size_t size, int value)
 {
 	size_t i;
 
 	for (i = 0; i < size; i++)
 	{
-		printf("Value checked array[%d] = [%d]\n", (int)i, arr[i]);
-		if (arr[i] == value)
+		printf("Value checked array[%d] = [%d]\n", (int)i, array[i]);
+		if (array[i] == value)
 		{
 			return ((int)i);
 		}
