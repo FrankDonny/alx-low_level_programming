@@ -2,7 +2,7 @@
 
 /**
  * linear_search - the linear search algorithm
- * @arr: the array to search within
+ * @array: the array to search within
  * @size: size of the array
  * @value: value to be searched for
  * Return: the index of the value on success else -1
